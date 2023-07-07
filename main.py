@@ -7,7 +7,7 @@ nlp_en = spacy.load("en_core_web_sm")
 doc_pt = nlp_pt("Esta é uma frase para amar e falar.")
 doc_en = nlp_en(input("Digite alguma frase em ingles:"))
 
-user_vectors = [token.vector for token in doc_en]
+user_vector = doc_en.vector
 
 items = [
     nlp_en("book"),
@@ -18,14 +18,15 @@ items = [
 
 item_vectors = []
 for item in items:
+    item_doc = nlp_en(item)
     item_vectors.append(item[0].vector)
 
 similarities = []
 for vector in item_vectors:
-    similarities.append(1 - spatial.distance.cosine(user_vectors, vector))
+    similarities.append(1 - spatial.distance.cosine(user_vector, vector))
 
 heighest_similarity = max(similarities)
-recommend = items[similarities.index(heighest_similarity)][0].text
+recommend = items[similarities.index(heighest_similarity)]
 
 print(f"Based on your interests, I recommend a {recommend}")
 
