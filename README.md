@@ -1,6 +1,5 @@
-<video autoplay loop>
-  <source src="https://i.postimg.cc/6pQ1Fynx/python.gif" type="video/gif">
-</video>
+
+[![python.gif](https://i.postimg.cc/6pQ1Fynx/python.gif)](https://postimg.cc/gnfDZcgg)
 
 # SemanticMapper
 
