@@ -9,6 +9,14 @@ Fala players, tranquilos ? Hoje no intuito de entender melhor o funcionamento do
 
 # Como isso funciona na Pratica?
 
+Primeiro instale a biblioteca spacy com o seguinte comando no seu terminal:
+
+
+```python
+pip install spacy
+```
+
+
 
 [![game-over.gif](https://i.postimg.cc/Jhr7f3K4/game-over.gif)](https://postimg.cc/nXWt7D66)
 
