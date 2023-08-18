@@ -13,12 +13,13 @@ items = [
     nlp_en("book"),
     nlp_en("movie"),
     nlp_en("game"),
-    nlp_en("album"),
+    nlp_en("marvel"),
+    nlp_en("programing"),
+    nlp_en("animes"),
 ]
 
 item_vectors = []
 for item in items:
-    item_doc = nlp_en(item)
     item_vectors.append(item[0].vector)
 
 similarities = []
