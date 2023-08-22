@@ -1,6 +1,4 @@
 import spacy
-from scipy import spatial
-
 
 nlp_pt = spacy.load("pt_core_news_sm")
 nlp_en = spacy.load("en_core_web_sm")
