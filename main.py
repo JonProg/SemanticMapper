@@ -1,37 +1,35 @@
 import spacy
 from scipy import spatial
 
+
 nlp_pt = spacy.load("pt_core_news_sm")
 nlp_en = spacy.load("en_core_web_sm")
 
-doc_pt = nlp_pt("Esta é uma frase para amar e falar.")
-doc_en = nlp_en(input("Digite alguma frase em ingles:"))
+doc_pt = nlp_pt("""No dia 15 de maio de 2022, ocorreu uma partida de futebol 
+eletrizante entre as equipes do Real Madrid e do Barcelona. 
+O jogo foi disputado no Estádio Santiago Bernabéu, em Madrid, e contou com a 
+presença de renomados jogadores como Lionel Messi, Sergio Ramos, Karim Benzema e 
+Gerard Piqué. A partida foi marcada por lances emocionantes, belos gols e uma 
+intensa rivalidade entre as equipes. No final, o Real Madrid saiu vitorioso, com um 
+placar de 3 a 2, em um jogo que ficará marcado na história do futebol.""")
 
-user_vector = doc_en.vector
+#Entidades no texto |
+entidades_text = list(doc_pt.ents)
+print(entidades_text)
 
-items = [
-    nlp_en("book"),
-    nlp_en("movie"),
-    nlp_en("game"),
-    nlp_en("marvel"),
-    nlp_en("programing"),
-    nlp_en("animes"),
-]
+#Classe gramaticais |
+etiquetas_class = [(token.orth_, token.pos_) for token in doc_pt]
+print(etiquetas_class)
 
-item_vectors = []
-for item in items:
-    item_vectors.append(item[0].vector)
-
-similarities = []
-for vector in item_vectors:
-    similarities.append(1 - spatial.distance.cosine(user_vector, vector))
-
-heighest_similarity = max(similarities)
-recommend = items[similarities.index(heighest_similarity)]
-
-print(f"Based on your interests, I recommend a {recommend}")
+#Lematização |
+lemmas = [token.lemma_ for token in doc_pt if token.pos_ == 'VERB']
+print(lemmas)
 
 
-#print("Verbs:", [token.lemma_ for token in doc if token.pos_ == "VERB"])
+
+
+
+
+
 
 
