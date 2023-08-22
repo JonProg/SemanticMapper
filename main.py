@@ -13,14 +13,42 @@ Gerard Piqué. A partida foi marcada por lances emocionantes, belos gols e uma
 intensa rivalidade entre as equipes. No final, o Real Madrid saiu vitorioso, com um 
 placar de 3 a 2, em um jogo que ficará marcado na história do futebol.""")
 
+#_____________________________________________
 #Entidades no texto |
 entidades_text = list(doc_pt.ents)
-print(entidades_text)
+print(f'Entidades do texto -> {entidades_text}')
 
+#_____________________________________________
 #Classe gramaticais |
 etiquetas_class = [(token.orth_, token.pos_) for token in doc_pt]
-print(etiquetas_class)
+print(f'Classe gramatical das palavras -> {etiquetas_class}')
 
+"""
+ADJ: adjective
+ADP: adposition
+ADV: adverb
+AUX: auxiliary verb
+CONJ: coordinating conjunction
+DET: determiner
+INTJ: interjection
+NOUN: noun
+NUM: numeral
+PART: particle
+PRON: pronoun
+PROPN: proper noun
+PUNCT: punctuation
+SCONJ: subordinating conjunction
+SYM: symbol
+VERB: verb
+X: other
+
+"""
+
+entidades_detail = [(entidade, entidade.label_) for entidade in doc_pt.ents]
+print(f'Detalhamento das entidades -> {etiquetas_class}')
+
+
+#_____________________________________________
 #Lematização |
 lemmas = [token.lemma_ for token in doc_pt if token.pos_ == 'VERB']
 print(lemmas)
