@@ -60,12 +60,3 @@ print(f'Sujeitos -> {sujeito}')
 #Lematização |
 lemmas = [token.lemma_ for token in doc_pt if token.pos_ == 'VERB']
 print(f'Lematização dos verbos -> {lemmas}')
-
-
-
-
-
-
-
-
-
