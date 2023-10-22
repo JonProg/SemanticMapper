@@ -9,7 +9,7 @@ Fala players, tranquilos ? Hoje no intuito de entender melhor o funcionamento do
 
 # Como isso funciona na Prática?
 
-Depois de clona o projeto em sua maquina instale a biblioteca spacy com o seguinte comando no seu terminal:
+Depois de clonar o projeto em sua maquina instale a biblioteca spacy com o seguinte comando no seu terminal:
 
 ```python
 pip install spacy
